@@ -35,7 +35,7 @@ func BenchmarkXMLDeserializeLarge(b *testing.B) {
 	}
 }
 
-var dataMedium = loader.LoadIntData("../loader/data/int.csv", 100)
+var dataMedium = loader.LoadIntData("../../loader/data/int.csv", 100)
 var newDataMedium = make([]loader.IntData, 0, 100)
 var serializedMedium, _ = xml.Marshal(dataMedium)
 
@@ -62,7 +62,7 @@ func BenchmarkXMLDeserializeMedium(b *testing.B) {
 	}
 }
 
-var dataSmall = loader.LoadIntData("../loader/data/int.csv", 1)
+var dataSmall = loader.LoadIntData("../../loader/data/int.csv", 1)
 var newDataSmall = make([]loader.IntData, 0, 1)
 var serializedSmall, _ = xml.Marshal(dataSmall)
 

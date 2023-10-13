@@ -1,6 +1,7 @@
 package avro_binary_strings
 
 import (
+	"fmt"
 	"testing"
 
 	"goFormatsBenchmarking/loader"
@@ -18,6 +19,9 @@ func BenchmarkAvroBinarySerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := loader.AvroStringCodec.BinaryFromNative(nil, dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkAvroBinaryDeserializeLarge(b *testing.B) {
@@ -43,6 +47,9 @@ func BenchmarkAvroBinarySerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := loader.AvroStringCodec.BinaryFromNative(nil, dataMedium)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkAvroBinaryDeserializeMedium(b *testing.B) {
@@ -68,6 +75,9 @@ func BenchmarkAvroBinarySerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := loader.AvroStringCodec.BinaryFromNative(nil, dataSmall)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkAvroBinaryDeserializeSmall(b *testing.B) {

@@ -1,6 +1,7 @@
 package cbor_mixed
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/fxamacker/cbor/v2"
@@ -21,6 +22,9 @@ func BenchmarkCBORSerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := cbor.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkCBORDeserializeLarge(b *testing.B) {
@@ -47,6 +51,9 @@ func BenchmarkCBORSerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := cbor.Marshal(dataMedium)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkCBORDeserializeMedium(b *testing.B) {
@@ -73,6 +80,9 @@ func BenchmarkCBORSerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := cbor.Marshal(dataSmall)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkCBORDeserializeSmall(b *testing.B) {

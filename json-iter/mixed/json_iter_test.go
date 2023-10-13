@@ -25,6 +25,9 @@ func BenchmarkIterJSONSerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkIterJSONDeserializeLarge(b *testing.B) {
@@ -52,6 +55,9 @@ func BenchmarkIterJSONSerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataMedium)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkIterJSONDeserializeMedium(b *testing.B) {
@@ -79,6 +85,9 @@ func BenchmarkIterJSONSerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataSmall)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkIterJSONDeserializeSmall(b *testing.B) {

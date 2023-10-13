@@ -23,6 +23,9 @@ func BenchmarkSegmentioEncodingJSONSerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkSegmentioEncodingJSONDeserializeLarge(b *testing.B) {
@@ -50,6 +53,9 @@ func BenchmarkSegmentioEncodingJSONSerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataMedium)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkSegmentioEncodingJSONDeserializeMedium(b *testing.B) {
@@ -77,6 +83,9 @@ func BenchmarkSegmentioEncodingJSONSerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataSmall)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkSegmentioEncodingJSONDeserializeSmall(b *testing.B) {

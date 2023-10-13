@@ -24,6 +24,9 @@ func BenchmarkProtobufSerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := proto.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkProtobufDeserializeLarge(b *testing.B) {
@@ -51,6 +54,9 @@ func BenchmarkProtobufSerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := proto.Marshal(dataMedium)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkProtobufDeserializeMedium(b *testing.B) {
@@ -78,6 +84,9 @@ func BenchmarkProtobufSerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := proto.Marshal(dataSmall)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkProtobufDeserializeSmall(b *testing.B) {

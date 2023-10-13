@@ -22,6 +22,9 @@ func BenchmarkXMLSerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := xml.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkXMLDeserializeLarge(b *testing.B) {
@@ -49,6 +52,9 @@ func BenchmarkXMLSerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := xml.Marshal(dataMedium)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkXMLDeserializeMedium(b *testing.B) {
@@ -76,6 +82,9 @@ func BenchmarkXMLSerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := xml.Marshal(dataSmall)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkXMLDeserializeSmall(b *testing.B) {

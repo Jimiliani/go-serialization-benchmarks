@@ -1,6 +1,7 @@
 package avro_textual_strings
 
 import (
+	"fmt"
 	"testing"
 
 	"goFormatsBenchmarking/loader"
@@ -18,6 +19,9 @@ func BenchmarkAvroTextualSerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := loader.AvroStringCodec.TextualFromNative(nil, dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkAvroTextualDeserializeLarge(b *testing.B) {
@@ -43,6 +47,9 @@ func BenchmarkAvroTextualSerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := loader.AvroStringCodec.TextualFromNative(nil, dataMedium)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkAvroTextualDeserializeMedium(b *testing.B) {
@@ -68,6 +75,9 @@ func BenchmarkAvroTextualSerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := loader.AvroStringCodec.TextualFromNative(nil, dataSmall)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkAvroTextualDeserializeSmall(b *testing.B) {

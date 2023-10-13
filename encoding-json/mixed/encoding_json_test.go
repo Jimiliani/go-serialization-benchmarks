@@ -2,6 +2,7 @@ package encoding_json_mixed
 
 import (
 	"encoding/json"
+	"fmt"
 	"testing"
 
 	"goFormatsBenchmarking/loader"
@@ -20,6 +21,9 @@ func BenchmarkEncodingJSONSerializeLarge(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkEncodingJSONDeserializeLarge(b *testing.B) {
@@ -46,6 +50,9 @@ func BenchmarkEncodingJSONSerializeMedium(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkEncodingJSONDeserializeMedium(b *testing.B) {
@@ -72,6 +79,9 @@ func BenchmarkEncodingJSONSerializeSmall(b *testing.B) {
 			b.Fatal(err)
 		}
 	}
+	b.StopTimer()
+	d, _ := json.Marshal(dataLarge)
+	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 
 func BenchmarkEncodingJSONDeserializeSmall(b *testing.B) {

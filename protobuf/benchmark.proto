@@ -1,0 +1,88 @@
+syntax = "proto3";
+package benchmark;
+
+import "google/protobuf/wrappers.proto";
+
+option go_package = ".";
+
+message MixedDataSlice {
+  repeated MixedData data = 1;
+}
+
+message MixedData {
+  google.protobuf.Int64Value int1 = 1;
+  google.protobuf.Int64Value int2 = 2;
+  google.protobuf.Int64Value int3 = 3;
+  google.protobuf.Int64Value int4 = 4;
+  google.protobuf.Int64Value int5 = 5;
+  google.protobuf.Int64Value int6 = 6;
+  google.protobuf.Int64Value int7 = 7;
+  google.protobuf.Int64Value int8 = 8;
+  google.protobuf.Int64Value int9 = 9;
+  google.protobuf.Int64Value int10 = 10;
+  google.protobuf.StringValue string1 = 11;
+  google.protobuf.StringValue string2 = 12;
+  google.protobuf.StringValue string3 = 13;
+  google.protobuf.StringValue string4 = 14;
+  google.protobuf.StringValue string5 = 15;
+  google.protobuf.StringValue string6 = 16;
+  google.protobuf.StringValue string7 = 17;
+  google.protobuf.StringValue string8 = 18;
+  google.protobuf.StringValue string9 = 19;
+  google.protobuf.StringValue string10 = 20;
+}
+
+message IntDataSlice {
+  repeated IntData data = 1;
+}
+
+message IntData {
+  google.protobuf.Int64Value int1 = 1;
+  google.protobuf.Int64Value int2 = 2;
+  google.protobuf.Int64Value int3 = 3;
+  google.protobuf.Int64Value int4 = 4;
+  google.protobuf.Int64Value int5 = 5;
+  google.protobuf.Int64Value int6 = 6;
+  google.protobuf.Int64Value int7 = 7;
+  google.protobuf.Int64Value int8 = 8;
+  google.protobuf.Int64Value int9 = 9;
+  google.protobuf.Int64Value int10 = 10;
+  google.protobuf.Int64Value int11 = 11;
+  google.protobuf.Int64Value int12 = 12;
+  google.protobuf.Int64Value int13 = 13;
+  google.protobuf.Int64Value int14 = 14;
+  google.protobuf.Int64Value int15 = 15;
+  google.protobuf.Int64Value int16 = 16;
+  google.protobuf.Int64Value int17 = 17;
+  google.protobuf.Int64Value int18 = 18;
+  google.protobuf.Int64Value int19 = 19;
+  google.protobuf.Int64Value int20 = 20;
+}
+
+
+message StringDataSlice {
+  repeated StringData data = 1;
+}
+
+message StringData {
+  google.protobuf.StringValue string1 = 1;
+  google.protobuf.StringValue string2 = 2;
+  google.protobuf.StringValue string3 = 3;
+  google.protobuf.StringValue string4 = 4;
+  google.protobuf.StringValue string5 = 5;
+  google.protobuf.StringValue string6 = 6;
+  google.protobuf.StringValue string7 = 7;
+  google.protobuf.StringValue string8 = 8;
+  google.protobuf.StringValue string9 = 9;
+  google.protobuf.StringValue string10 = 10;
+  google.protobuf.StringValue string11 = 11;
+  google.protobuf.StringValue string12 = 12;
+  google.protobuf.StringValue string13 = 13;
+  google.protobuf.StringValue string14 = 14;
+  google.protobuf.StringValue string15 = 15;
+  google.protobuf.StringValue string16 = 16;
+  google.protobuf.StringValue string17 = 17;
+  google.protobuf.StringValue string18 = 18;
+  google.protobuf.StringValue string19 = 19;
+  google.protobuf.StringValue string20 = 20;
+}

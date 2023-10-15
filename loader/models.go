@@ -1,30 +1,36 @@
 package loader
 
 import (
+	"encoding/xml"
+
 	"github.com/linkedin/goavro/v2"
 )
 
+type MixedDataSlice struct {
+	XMLName    xml.Name    `xml:"intDataSlice"`
+	MixedDatas []MixedData `xml:"mixedData"`
+}
 type MixedData struct {
-	Int1     *int64  `avro:"int1"`
-	Int2     *int64  `avro:"int2"`
-	Int3     *int64  `avro:"int3"`
-	Int4     *int64  `avro:"int4"`
-	Int5     *int64  `avro:"int5"`
-	Int6     *int64  `avro:"int6"`
-	Int7     *int64  `avro:"int7"`
-	Int8     *int64  `avro:"int8"`
-	Int9     *int64  `avro:"int9"`
-	Int10    *int64  `avro:"int10"`
-	String1  *string `avro:"string1"`
-	String2  *string `avro:"string2"`
-	String3  *string `avro:"string3"`
-	String4  *string `avro:"string4"`
-	String5  *string `avro:"string5"`
-	String6  *string `avro:"string6"`
-	String7  *string `avro:"string7"`
-	String8  *string `avro:"string8"`
-	String9  *string `avro:"string9"`
-	String10 *string `avro:"string10"`
+	Int1     *int64  `avro:"int1" xml:"int1"`
+	Int2     *int64  `avro:"int2" xml:"int2"`
+	Int3     *int64  `avro:"int3" xml:"int3"`
+	Int4     *int64  `avro:"int4" xml:"int4"`
+	Int5     *int64  `avro:"int5" xml:"int5"`
+	Int6     *int64  `avro:"int6" xml:"int6"`
+	Int7     *int64  `avro:"int7" xml:"int7"`
+	Int8     *int64  `avro:"int8" xml:"int8"`
+	Int9     *int64  `avro:"int9" xml:"int9"`
+	Int10    *int64  `avro:"int10" xml:"int10"`
+	String1  *string `avro:"string1" xml:"string1"`
+	String2  *string `avro:"string2" xml:"string2"`
+	String3  *string `avro:"string3" xml:"string3"`
+	String4  *string `avro:"string4" xml:"string4"`
+	String5  *string `avro:"string5" xml:"string5"`
+	String6  *string `avro:"string6" xml:"string6"`
+	String7  *string `avro:"string7" xml:"string7"`
+	String8  *string `avro:"string8" xml:"string8"`
+	String9  *string `avro:"string9" xml:"string9"`
+	String10 *string `avro:"string10" xml:"string10"`
 }
 
 func (m MixedData) ToMap() map[string]interface{} {
@@ -134,27 +140,31 @@ func (m MixedData) ToMap() map[string]interface{} {
 	return d
 }
 
+type IntDataSlice struct {
+	XMLName  xml.Name  `xml:"intDataSlice"`
+	IntDatas []IntData `xml:"intData"`
+}
 type IntData struct {
-	Int1  *int64 `avro:"int1"`
-	Int2  *int64 `avro:"int2"`
-	Int3  *int64 `avro:"int3"`
-	Int4  *int64 `avro:"int4"`
-	Int5  *int64 `avro:"int5"`
-	Int6  *int64 `avro:"int6"`
-	Int7  *int64 `avro:"int7"`
-	Int8  *int64 `avro:"int8"`
-	Int9  *int64 `avro:"int9"`
-	Int10 *int64 `avro:"int10"`
-	Int11 *int64 `avro:"int11"`
-	Int12 *int64 `avro:"int12"`
-	Int13 *int64 `avro:"int13"`
-	Int14 *int64 `avro:"int14"`
-	Int15 *int64 `avro:"int15"`
-	Int16 *int64 `avro:"int16"`
-	Int17 *int64 `avro:"int17"`
-	Int18 *int64 `avro:"int18"`
-	Int19 *int64 `avro:"int19"`
-	Int20 *int64 `avro:"int20"`
+	Int1  *int64 `avro:"int1" xml:"int1"`
+	Int2  *int64 `avro:"int2" xml:"int2"`
+	Int3  *int64 `avro:"int3" xml:"int3"`
+	Int4  *int64 `avro:"int4" xml:"int4"`
+	Int5  *int64 `avro:"int5" xml:"int5"`
+	Int6  *int64 `avro:"int6" xml:"int6"`
+	Int7  *int64 `avro:"int7" xml:"int7"`
+	Int8  *int64 `avro:"int8" xml:"int8"`
+	Int9  *int64 `avro:"int9" xml:"int9"`
+	Int10 *int64 `avro:"int10" xml:"int10"`
+	Int11 *int64 `avro:"int11" xml:"int11"`
+	Int12 *int64 `avro:"int12" xml:"int12"`
+	Int13 *int64 `avro:"int13" xml:"int13"`
+	Int14 *int64 `avro:"int14" xml:"int14"`
+	Int15 *int64 `avro:"int15" xml:"int15"`
+	Int16 *int64 `avro:"int16" xml:"int16"`
+	Int17 *int64 `avro:"int17" xml:"int17"`
+	Int18 *int64 `avro:"int18" xml:"int18"`
+	Int19 *int64 `avro:"int19" xml:"int19"`
+	Int20 *int64 `avro:"int20" xml:"int20"`
 }
 
 func (m IntData) ToMap() map[string]interface{} {
@@ -263,27 +273,31 @@ func (m IntData) ToMap() map[string]interface{} {
 	return d
 }
 
+type StringDataSlice struct {
+	XMLName     xml.Name     `xml:"intDataSlice"`
+	StringDatas []StringData `xml:"stringData"`
+}
 type StringData struct {
-	String1  *string `avro:"string1"`
-	String2  *string `avro:"string2"`
-	String3  *string `avro:"string3"`
-	String4  *string `avro:"string4"`
-	String5  *string `avro:"string5"`
-	String6  *string `avro:"string6"`
-	String7  *string `avro:"string7"`
-	String8  *string `avro:"string8"`
-	String9  *string `avro:"string9"`
-	String10 *string `avro:"string10"`
-	String11 *string `avro:"string11"`
-	String12 *string `avro:"string12"`
-	String13 *string `avro:"string13"`
-	String14 *string `avro:"string14"`
-	String15 *string `avro:"string15"`
-	String16 *string `avro:"string16"`
-	String17 *string `avro:"string17"`
-	String18 *string `avro:"string18"`
-	String19 *string `avro:"string19"`
-	String20 *string `avro:"string20"`
+	String1  *string `avro:"string1" xml:"string1"`
+	String2  *string `avro:"string2" xml:"string2"`
+	String3  *string `avro:"string3" xml:"string3"`
+	String4  *string `avro:"string4" xml:"string4"`
+	String5  *string `avro:"string5" xml:"string5"`
+	String6  *string `avro:"string6" xml:"string6"`
+	String7  *string `avro:"string7" xml:"string7"`
+	String8  *string `avro:"string8" xml:"string8"`
+	String9  *string `avro:"string9" xml:"string9"`
+	String10 *string `avro:"string10" xml:"string10"`
+	String11 *string `avro:"string11" xml:"string11"`
+	String12 *string `avro:"string12" xml:"string12"`
+	String13 *string `avro:"string13" xml:"string13"`
+	String14 *string `avro:"string14" xml:"string14"`
+	String15 *string `avro:"string15" xml:"string15"`
+	String16 *string `avro:"string16" xml:"string16"`
+	String17 *string `avro:"string17" xml:"string17"`
+	String18 *string `avro:"string18" xml:"string18"`
+	String19 *string `avro:"string19" xml:"string19"`
+	String20 *string `avro:"string20" xml:"string20"`
 }
 
 func (m StringData) ToMap() map[string]interface{} {

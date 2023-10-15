@@ -20,7 +20,7 @@ func BenchmarkAvroTextualSerializeLarge(b *testing.B) {
 		}
 	}
 	b.StopTimer()
-	d, _ := loader.AvroMixedCodec.TextualFromNative(nil, dataSmall)
+	d, _ := loader.AvroMixedCodec.TextualFromNative(nil, dataLarge)
 	fmt.Printf("Serialized data size: %d bytes (%.2f MB)\n", len(d), float64(len(d))/(1024*1024))
 }
 

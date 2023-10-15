@@ -8,8 +8,8 @@ import (
 	"goFormatsBenchmarking/loader"
 )
 
-var dataLarge = loader.LoadStringsData("../../loader/data/strings.csv", 100_000)
-var newDataLarge = make([]loader.StringData, 0, 100_000)
+var dataLarge = loader.StringDataSlice{StringDatas: loader.LoadStringsData("../../loader/data/strings.csv", 100_000)}
+var newDataLarge = loader.StringDataSlice{StringDatas: make([]loader.StringData, 0, 100_000)}
 var serializedLarge, _ = xml.Marshal(dataLarge)
 
 func BenchmarkXMLSerializeLarge(b *testing.B) {
@@ -38,8 +38,8 @@ func BenchmarkXMLDeserializeLarge(b *testing.B) {
 	}
 }
 
-var dataMedium = loader.LoadStringsData("../../loader/data/strings.csv", 100)
-var newDataMedium = make([]loader.StringData, 0, 100)
+var dataMedium = loader.StringDataSlice{StringDatas: loader.LoadStringsData("../../loader/data/strings.csv", 100)}
+var newDataMedium = loader.StringDataSlice{StringDatas: make([]loader.StringData, 0, 100)}
 var serializedMedium, _ = xml.Marshal(dataMedium)
 
 func BenchmarkXMLSerializeMedium(b *testing.B) {
@@ -68,8 +68,8 @@ func BenchmarkXMLDeserializeMedium(b *testing.B) {
 	}
 }
 
-var dataSmall = loader.LoadStringsData("../../loader/data/strings.csv", 1)
-var newDataSmall = make([]loader.StringData, 0, 1)
+var dataSmall = loader.StringDataSlice{StringDatas: loader.LoadStringsData("../../loader/data/strings.csv", 1)}
+var newDataSmall = loader.StringDataSlice{StringDatas: make([]loader.StringData, 0, 1)}
 var serializedSmall, _ = xml.Marshal(dataSmall)
 
 func BenchmarkXMLSerializeSmall(b *testing.B) {
